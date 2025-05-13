@@ -1,0 +1,657 @@
+/* Global Styles */
+:root {
+    --primary-color: #0c2340;    /* Darker Navy Blue */
+    --secondary-color: #c5050c;   /* Wisconsin Red */
+    --accent-color: #282828;      /* Dark Gray */
+    --light-bg: #f0f0f0;         /* Light Gray */
+    --white: #ffffff;
+    --text-color: #1f1f1f;
+    --gradient-overlay: linear-gradient(rgba(12, 35, 64, 0.9), rgba(197, 5, 12, 0.8));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--white);
+    padding: 1rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    height: 120px;  /* Doubled from 80px */
+}
+
+.logo {
+    height: 120px;  /* Doubled from 60px */
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 110px;  /* Doubled from 55px */
+    width: auto;
+    object-fit: contain;
+}
+
+.logo h1 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li a {
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;  /* Slightly larger font to match the scale */
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--secondary-color);
+    position: relative;
+}
+
+.nav-links li a:hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: var(--secondary-color);
+    bottom: -2px;
+    left: 0;
+    transform: scaleX(1);
+    transition: transform 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+    height: 50vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 1rem;
+    margin-top: 120px;
+    overflow: hidden;
+}
+
+.hero-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 2rem;
+    background: rgba(12, 35, 64, 0.6);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: var(--white);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--white);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Research Area Section */
+.research-area {
+    padding: 3rem 5%;
+    background-color: var(--light-bg);
+}
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.research-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.research-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.research-card i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+/* Team Section */
+.team {
+    padding: 3rem 5%; /* Reduced from 5rem */
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.member-photo.placeholder {
+    width: 200px;
+    height: 200px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+}
+
+/* Publications Section */
+.publications {
+    padding: 3rem 5%; /* Reduced from 5rem */
+    background-color: var(--light-bg);
+}
+
+.publication {
+    background: var(--white);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(26, 95, 122, 0.1);
+    border-left: 4px solid var(--secondary-color);
+}
+
+.publication-year {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Contact Section */
+.contact {
+    padding: 3rem 5%; /* Reduced from 5rem */
+    text-align: center;
+}
+
+.contact-info {
+    margin-top: 2rem;
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+}
+
+.contact-info i {
+    color: var(--secondary-color);
+    margin-right: 0.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 5%;
+}
+
+/* Common Section Styles */
+section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Mobile Navigation */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        height: calc(100vh - 70px);
+        background-color: var(--white);
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transition: right 0.5s ease;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-active {
+        right: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .research-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* Team Page */
+.team-page {
+    padding: 180px 5% 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-page h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.team-section {
+    margin-bottom: 4rem;
+}
+
+.team-section h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+}
+
+.team-members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+.team-member-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    background: var(--white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    width: 100%;
+}
+
+.member-photo {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.member-card-info {
+    padding: 1rem;
+    text-align: center;
+}
+
+.member-card-info h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.member-card-info .member-title {
+    color: var(--secondary-color);
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Ensure consistent sizing for single-card rows */
+.team-section:first-of-type .team-members-grid {
+    grid-template-columns: minmax(300px, 400px);
+    justify-content: center;
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 1024px) {
+    .team-members-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    
+    .member-photo {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .team-members-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .member-photo {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+/* Graduate Students Grid */
+.team-member.student {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.team-member.student .member-photo {
+    width: 200px;
+    margin: 0 auto 1.5rem;
+}
+
+/* Alumni Section */
+.alumni-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.alumni-member {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.alumni-member h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.alumni-degree {
+    color: var(--secondary-color);
+    margin-bottom: 0.25rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .team-member.pi {
+        grid-template-columns: 1fr;
+    }
+
+    .team-member.pi .member-photo {
+        width: 250px;
+        margin: 0 auto;
+    }
+}
+
+/* Team Member Profile Page */
+.team-member-profile {
+    padding: 180px 5% 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.profile-container {
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.profile-header {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    background: var(--light-bg);
+}
+
+.profile-photo {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-title h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.profile-title .title {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile-title .department,
+.profile-title .university {
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+.profile-content {
+    padding: 2rem;
+}
+
+.profile-content > div {
+    margin-bottom: 2rem;
+}
+
+.profile-content h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.profile-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-content ul li {
+    margin-bottom: 0.5rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+}
+
+.contact-info i {
+    color: var(--secondary-color);
+    width: 20px;
+    margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .profile-header {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .profile-photo {
+        width: 250px;
+        margin: 0 auto;
+    }
+}
+
+/* Principal Investigator */
+.team-section:first-of-type .team-members-grid {
+    display: flex;
+    justify-content: center;
+}
+
+.team-section:first-of-type .team-member-card {
+    width: 50%;  /* Make the card 50% of its container width */
+    max-width: 400px;  /* Set a maximum width to prevent it from getting too large */
+}
+
+.project-page {
+    max-width: 1200px;
+    margin: 80px auto 0;
+    padding: 2rem;
+}
+
+.project-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.project-header i {
+    color: var(--uw-red);
+    margin-bottom: 1rem;
+}
+
+.project-summary {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.project-details h2 {
+    color: var(--uw-red);
+    margin: 2rem 0 1rem;
+}
+
+.current-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.project-item {
+    background: #f8f8f8;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.project-item h3 {
+    color: var(--uw-red);
+    margin-bottom: 1rem;
+}
+
+.project-publications {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #f8f8f8;
+    border-radius: 8px;
+} 
