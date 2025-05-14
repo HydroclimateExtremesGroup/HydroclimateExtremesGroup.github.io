@@ -427,14 +427,25 @@ section h2 {
 
 @media screen and (max-width: 428px) {
     .hero {
-        min-height: 45dvh;
+        min-height: 65dvh;  /* Increased from 45dvh */
         padding-top: 80px;
+    }
+
+    .hero-slideshow {
+        height: 100%;
+    }
+
+    .hero-slideshow .slide {
+        height: 100%;
+        background-position: center;
+        background-size: cover;
     }
 
     .hero-content {
         width: 88%;
         padding: 1rem;
         background: rgba(12, 35, 64, 0.95);
+        margin: 1rem auto;
     }
 
     .hero-content h1 {
@@ -452,25 +463,10 @@ section h2 {
     }
 }
 
-/* iOS and smaller screens */
+/* Extra small screens and landscape mode */
 @media screen and (max-width: 428px) and (max-height: 800px) {
     .hero {
-        min-height: 40dvh;
-        padding-top: 70px;
-    }
-
-    .hero-content {
-        padding: 0.75rem;
-    }
-
-    .hero-content h1 {
-        font-size: 1.1rem;
-        margin-bottom: 0.3rem;
-    }
-
-    .hero-content p {
-        font-size: 0.8rem;
-        line-height: 1.15;
+        min-height: 55dvh;  /* Increased from 40dvh */
     }
 }
 
