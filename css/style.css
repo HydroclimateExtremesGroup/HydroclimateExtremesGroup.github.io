@@ -13,12 +13,29 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: -webkit-fill-available;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body.nav-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
 }
 
 /* Navigation */
@@ -97,6 +114,8 @@ body {
     color: var(--white);
     padding: 120px 1rem 2rem 1rem;
     overflow: hidden;
+    padding-top: 120px;
+    padding-bottom: env(safe-area-inset-bottom);
 }
 
 .hero-slideshow {
@@ -320,7 +339,58 @@ section h2 {
         align-items: center;
         width: 100%;
         transition: right 0.5s ease;
-        padding-bottom: env(safe-area-inset-bottom);
+        padding: 2rem 0;
+        padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-links.nav-active {
+        right: 0;
+    }
+
+    .nav-links li {
+        opacity: 0;
+        margin: 1.5rem 0;
+    }
+
+    .nav-links li a {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .burger {
+        display: block;
+        cursor: pointer;
+        padding: 1rem;
+        margin: -1rem;
+        z-index: 1000;
+    }
+
+    .burger.toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger.toggle .line2 {
+        opacity: 0;
+    }
+
+    .burger.toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
     }
 
     .hero {
