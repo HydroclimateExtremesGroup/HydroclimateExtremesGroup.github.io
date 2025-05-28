@@ -1,9 +1,10 @@
 /* Global Styles */
 :root {
-    --primary-color: #0c2340;    /* Darker Navy Blue */
-    --secondary-color: #c5050c;   /* Wisconsin Red */
-    --accent-color: #282828;      /* Dark Gray */
-    --light-bg: #f0f0f0;         /* Light Gray */
+    --primary-color: #0c2340;    /* UW Dark Blue */
+    --secondary-color: #c5050c;   /* UW Red */
+    --dark-red: #9b0000;         /* UW Dark Red */
+    --accent-color: #282828;     /* Dark Gray */
+    --light-bg: #f7f7f7;         /* Light Gray Background */
     --white: #ffffff;
     --text-color: #1f1f1f;
     --gradient-overlay: linear-gradient(rgba(12, 35, 64, 0.9), rgba(197, 5, 12, 0.8));
@@ -159,7 +160,7 @@ body.nav-open {
     max-width: 800px;
     width: 90%;
     padding: 2rem;
-    background: rgba(12, 35, 64, 0.9);
+    background: rgba(197, 5, 12, 0.95);  /* UW-Madison red with 95% opacity */
     border-radius: 10px;
     backdrop-filter: blur(8px);
     margin: 0 auto;
@@ -170,6 +171,8 @@ body.nav-open {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     line-height: 1.2;
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content p {
@@ -204,11 +207,13 @@ body.nav-open {
     text-decoration: none;
     color: inherit;
     display: block;
+    border-left: 4px solid transparent;
 }
 
 .research-card:hover {
+    border-left: 4px solid var(--secondary-color);
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 12px rgba(12, 35, 64, 0.15);
 }
 
 .research-card i {
@@ -257,7 +262,7 @@ body.nav-open {
 }
 
 .publication-year {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     font-weight: bold;
 }
 
@@ -282,10 +287,11 @@ body.nav-open {
 
 /* Footer */
 footer {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: var(--white);
     text-align: center;
     padding: 2rem 5%;
+    border-top: 4px solid var(--primary-color);
 }
 
 /* Common Section Styles */
@@ -294,6 +300,8 @@ section h2 {
     color: var(--primary-color);
     font-size: 2.5rem;
     margin-bottom: 2rem;
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
 }
 
 /* Mobile Navigation */
@@ -397,9 +405,10 @@ section h2 {
     }
 
     .hero-content {
-        padding: 1.25rem;
-        width: 92%;
-        margin: 0 auto;
+        width: 88%;
+        padding: 1rem;
+        background: rgba(197, 5, 12, 0.95);  /* UW-Madison red with 95% opacity */
+        margin: 1rem auto;
     }
 
     .hero-content h1 {
@@ -444,7 +453,7 @@ section h2 {
     .hero-content {
         width: 88%;
         padding: 1rem;
-        background: rgba(12, 35, 64, 0.95);
+        background: rgba(197, 5, 12, 0.95);  /* UW-Madison red with 95% opacity */
         margin: 1rem auto;
     }
 
@@ -605,6 +614,12 @@ section h2 {
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.alumni-member:hover {
+    border-left: 4px solid var(--secondary-color);
 }
 
 .alumni-member h3 {
@@ -797,4 +812,15 @@ section h2 {
     padding: 1.5rem;
     background: #f8f8f8;
     border-radius: 8px;
+}
+
+/* Button styles */
+.button {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--dark-red);
 } 
