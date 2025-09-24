@@ -770,6 +770,7 @@ section h2 {
 
 .project-header {
     text-align: center;
+    margin-top: 2rem;
     margin-bottom: 3rem;
 }
 
@@ -823,4 +824,185 @@ section h2 {
 
 .button:hover {
     background-color: var(--dark-red);
+}
+
+/* Wisconsin Rainfall Project Page Styles */
+.project-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.info-card {
+    background: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.info-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.info-card h3 i {
+    color: var(--secondary-color);
+}
+
+.info-card ul {
+    margin: 1rem 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.info-card li {
+    margin-bottom: 0.5rem;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.resource-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--primary-color);
+}
+
+.resource-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.resource-card h3 i {
+    color: var(--secondary-color);
+}
+
+.resource-card ul {
+    margin: 1rem 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.resource-card li {
+    margin-bottom: 0.5rem;
+}
+
+.resource-card a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.resource-card a:hover {
+    text-decoration: underline;
+}
+
+.contact-section {
+    background: var(--light-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.contact-section .contact-info {
+    margin-top: 1rem;
+}
+
+.contact-section .contact-info p {
+    margin-bottom: 0.5rem;
+}
+
+.contact-section .contact-info i {
+    color: var(--secondary-color);
+    margin-right: 0.5rem;
+}
+
+.contact-section .contact-info a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.contact-section .contact-info a:hover {
+    text-decoration: underline;
+}
+
+.shiny-app-container {
+    margin: 2rem 0;
+}
+
+.shiny-app-container h2 {
+    margin-bottom: 1rem;
+}
+
+#shiny-app {
+    position: relative;
+    background: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#shiny-app iframe {
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+}
+
+#shiny-app::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--secondary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#shiny-app.loading::before {
+    opacity: 1;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Responsive design for project page */
+@media screen and (max-width: 768px) {
+    .project-info-grid,
+    .resources-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .info-card,
+    .resource-card {
+        padding: 1rem;
+    }
+    
+    .contact-section {
+        padding: 1rem;
+    }
+    
+    #shiny-app {
+        height: 600px !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #shiny-app {
+        height: 500px !important;
+    }
 } 

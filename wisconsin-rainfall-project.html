@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wisconsin Rainfall Project - Hydroclimate Extremes Research Group</title>
+    <meta name="description" content="Present day and future extreme rainfall statistics for Wisconsin from the Hydroclimate Extremes Research Group and WICCI">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="https://www.wisc.edu">
+                    <img src="images/uw-logo-horizontal-1-color-web-digital/uw-logo-horizontal-1-color-web-digital.png" alt="University of Wisconsin-Madison logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="projects.html">Projects and Software</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="publications.html">Publications</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="project-page">
+            <div class="project-header">
+                <h1>The Wisconsin Rainfall Project</h1>
+                <p class="project-summary">
+                    The Wisconsin Rainfall Project provides present day and future extreme rainfall statistics for Wisconsin, 
+                    created by the Hydroclimate Extremes Research Group at the University of Wisconsin-Madison (UW) and 
+                     the Wisconsin Initiative on Climate Change Impacts (WICCI). The project consists of two main components: 1) Present day extreme rainfall statistics</strong> from NOAA Atlas 14 and from UW-Madison's RainyDay software and 2) Projection of future extreme rainfall statistics</strong> using the UW Probabilistic Downscaling method.
+                </ol>
+
+                <div class="shiny-app-container">
+                    <p>Use the interactive application below to explore Wisconsin rainfall data:</p>
+                    
+                    <!-- ShinyApps.io Integration -->
+                    <div id="shiny-app" style="width: 100%; height: 800px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+                        <iframe 
+                            src="https://wisconsinrainfallproject.shinyapps.io/rainyday_web_application/" 
+                            width="100%" 
+                            height="100%" 
+                            frameborder="0"
+                            style="border: none;"
+                            title="Wisconsin Rainfall Project Interactive Application">
+                        </iframe>
+                    </div>
+                    
+                    <!-- Fallback message if app doesn't load -->
+                    <div id="app-fallback" style="display: none; min-height: 600px; background-color: #f8f8f8; border: 2px dashed #ccc; align-items: center; justify-content: center; margin: 2rem 0;">
+                        <div style="text-align: center; color: #666;">
+                            <i class="fas fa-exclamation-triangle" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                            <p>Application temporarily unavailable</p>
+                            <p style="font-size: 0.9rem;">Please try refreshing the page or contact us if the issue persists.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Project Information</h2>
+                <div class="project-info-grid">
+                    <div class="info-card">
+                        <h3><i class="fas fa-info-circle"></i> Disclaimer</h3>
+                        <p>The rainfall statistics presented here are the result of applied research conducted at the University of Wisconsin-Madison. They do not supersede the requirements of codes and ordinances that may apply to a particular area or design situation. This data is provided for the user's information only, with no type of guarantee.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3><i class="fas fa-handshake"></i> Acknowledgements</h3>
+                        <p>This project was supported by:</p>
+                        <ul>
+                            <li>Wisconsin Department of Transportation</li>
+                            <li>Wisconsin Department of Natural Resources</li>
+                            <li>Baldwin Wisconsin Idea Endowment at the University of Wisconsin-Madison</li>
+                            <li>City of Madison</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>Additional Resources</h2>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <h3><i class="fas fa-file-alt"></i> 2-Page Briefs</h3>
+                        <p>For basic information on the purpose, methods and key findings:</p>
+                        <ul>
+                            <li><a href="https://her.cee.wisc.edu/wp-content/uploads/2021/11/Creating-Updated-Extreme-Rainfall-Information.pdf" target="_blank">Updated Extreme Rainfall Information using RainyDay</a></li>
+                            <li><a href="https://her.cee.wisc.edu/wp-content/uploads/2021/11/Past-and-Future-Data.pdf" target="_blank">Future Extreme Rainfall Information using Downscaling</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h3><i class="fas fa-database"></i> Data Access</h3>
+                        <ul>
+                            <li><a href="https://hdsc.nws.noaa.gov/pfds/pfds_map_cont.html" target="_blank">NOAA Atlas 14 webpage</a></li>
+                            <li><a href="https://github.com/HydroclimateExtremesGroup/RainyDay" target="_blank">RainyDay webpage</a></li>
+                            <li><a href="https://uwmadison.box.com/s/qoxkngyi4lrt8g1ydl678hfihtw3eb03" target="_blank">Original results (.asc format)</a></li>
+                            <li><a href="https://uwmadison.box.com/s/fpunkic9bvn0cfbs94c39eq7sxfw1jgk" target="_blank">Details on the data and methods used in this project</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="contact-section">
+                    <h2>Questions or Comments?</h2>
+                    <p>If you have any questions or comments about this project, please contact:</p>
+                    <div class="contact-info">
+                        <p><strong>Dr. Daniel Wright</strong></p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:danielb.wright@wisc.edu">danielb.wright@wisc.edu</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <a href="https://engineering.wisc.edu/departments/civil-environmental-engineering/" target="_blank" style="color: white; text-decoration: none;">University of Wisconsin-Madison Civil and Environmental Engineering</a>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Handle Shiny app iframe loading
+        document.addEventListener('DOMContentLoaded', function() {
+            const shinyAppContainer = document.getElementById('shiny-app');
+            const iframe = document.querySelector('#shiny-app iframe');
+            const fallback = document.getElementById('app-fallback');
+            let appLoaded = false;
+            
+            if (iframe && shinyAppContainer && fallback) {
+                // Show loading spinner
+                shinyAppContainer.classList.add('loading');
+                iframe.style.opacity = '0.3';
+                
+                // Handle iframe load events
+                iframe.onload = function() {
+                    appLoaded = true;
+                    iframe.style.opacity = '1';
+                    shinyAppContainer.classList.remove('loading');
+                    fallback.style.display = 'none'; // Ensure fallback is hidden
+                    console.log('Wisconsin Rainfall Project app loaded successfully');
+                };
+                
+                iframe.onerror = function() {
+                    console.log('Wisconsin Rainfall Project app failed to load');
+                    shinyAppContainer.style.display = 'none';
+                    fallback.style.display = 'flex';
+                };
+                
+                // Timeout fallback after 30 seconds (ShinyApps.io can be slower)
+                setTimeout(function() {
+                    if (!appLoaded && shinyAppContainer.classList.contains('loading')) {
+                        console.log('Wisconsin Rainfall Project app loading timeout');
+                        shinyAppContainer.style.display = 'none';
+                        fallback.style.display = 'flex';
+                    }
+                }, 30000);
+            }
+        });
+    </script>
+</body>
+</html>
