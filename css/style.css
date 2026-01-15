@@ -560,6 +560,17 @@ section h2 {
     margin: 0;
 }
 
+/* Remove underlines from links inside team member cards */
+.team-member-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.team-member-card a h3,
+.team-member-card a .member-title {
+    text-decoration: none;
+}
+
 /* Ensure consistent sizing for single-card rows */
 .team-section:first-of-type .team-members-grid {
     grid-template-columns: minmax(300px, 400px);
